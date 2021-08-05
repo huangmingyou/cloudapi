@@ -1,0 +1,94 @@
+info:
+  contact: {}
+  description: 基础架构信息查询服务
+  title: 基础架构信息查询服务
+  version: "1.0"
+paths:
+  /aliyun/balance:
+    get:
+      consumes:
+      - application/json
+      description: 查询余额
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: answer
+          schema:
+            type: integer
+      summary: 查询阿里云余额
+      tags:
+      - balance
+  /aliyun/slb:
+    get:
+      consumes:
+      - application/json
+      description: plus
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: answer
+          schema:
+            type: integer
+      summary: 列出所有阿里云slb
+      tags:
+      - slb
+  /aliyun/slb/{ip}:
+    get:
+      consumes:
+      - application/json
+      description: plus
+      parameters:
+      - description: slb ip
+        in: path
+        name: ip
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: answer
+          schema:
+            type: integer
+      summary: 列出阿里云slb对应的后端服务器ip
+      tags:
+      - slb
+  /tencent/balance:
+    get:
+      consumes:
+      - application/json
+      description: 查询余额
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: answer
+          schema:
+            type: integer
+      summary: 查询腾讯云余额
+      tags:
+      - balance
+  /wangsu/origip/{domain}:
+    get:
+      consumes:
+      - application/json
+      description: 查询回源ip
+      parameters:
+      - description: 域名
+        in: path
+        name: domain
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: answer
+          schema:
+            type: integer
+      summary: 查询cdn回源ip
+      tags:
+      - cdn
+swagger: "2.0"

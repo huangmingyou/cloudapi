@@ -1,0 +1,144 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "基础架构信息查询服务",
+        "title": "基础架构信息查询服务",
+        "contact": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/aliyun/balance": {
+            "get": {
+                "description": "查询余额",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "balance"
+                ],
+                "summary": "查询阿里云余额",
+                "responses": {
+                    "200": {
+                        "description": "answer",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        },
+        "/aliyun/slb": {
+            "get": {
+                "description": "plus",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "slb"
+                ],
+                "summary": "列出所有阿里云slb",
+                "responses": {
+                    "200": {
+                        "description": "answer",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        },
+        "/aliyun/slb/{ip}": {
+            "get": {
+                "description": "plus",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "slb"
+                ],
+                "summary": "列出阿里云slb对应的后端服务器ip",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "slb ip",
+                        "name": "ip",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "answer",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        },
+        "/tencent/balance": {
+            "get": {
+                "description": "查询余额",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "balance"
+                ],
+                "summary": "查询腾讯云余额",
+                "responses": {
+                    "200": {
+                        "description": "answer",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        },
+        "/wangsu/origip/{domain}": {
+            "get": {
+                "description": "查询回源ip",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "cdn"
+                ],
+                "summary": "查询cdn回源ip",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "域名",
+                        "name": "domain",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "answer",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
